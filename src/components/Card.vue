@@ -19,9 +19,15 @@
         <span class="timestamp__time">3 days left</span>
       </div>
     </div>
-    <div class="card__info">
-      <img src="assets/images/image-avatar.png" alt="Avatar" />
-      <p><span>Creation of</span> Jules Wyvern</p>
+    <div class="card__profile">
+      <img
+        src="assets/images/image-avatar.png"
+        alt="Avatar"
+        class="card__avatar"
+      />
+      <p class="card__autor">
+        Creation of <span class="card__name">Jules Wyvern</span>
+      </p>
     </div>
   </article>
 </template>
@@ -30,9 +36,10 @@
 .card {
   background-color: $dark-blue-2;
   border-radius: 15px;
+  box-shadow: 0px 28px 5px 15px hsla(217, 55%, 10%, 1);
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.625rem;
   padding: 1.5rem;
   width: 87%;
   height: 37.25rem;
@@ -52,6 +59,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &__profile {
+    border-top: 1px solid $dark-blue-3;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.875rem;
+  }
+  &__avatar {
+    border-radius: 100%;
+    cursor: pointer;
+    outline: 1px solid $white;
+    width: 2rem;
+  }
+  &__autor {
+    color: $blue;
+    font: 1rem $outfit;
+  }
+  &__name {
+    color: $white;
+    cursor: pointer;
   }
 }
 
