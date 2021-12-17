@@ -21,7 +21,7 @@
 <style lang="scss">
 .footer {
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   &__paragraph {
     color: $white;
     font-family: $outfit;
