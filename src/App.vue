@@ -1,26 +1,36 @@
 <template>
-  <div class="app">Hello World</div>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <Card />
+    <Copyright />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Card from './components/Card.vue'
+import Copyright from './components/Copyright.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Card,
+    Copyright,
   },
 }
 </script>
 
 <style lang="scss">
-.app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background-color: $primary;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: $dark-blue-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 </style>
