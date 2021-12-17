@@ -1,6 +1,8 @@
 <template>
-  <Card />
-  <Copyright />
+  <div class="container">
+    <Card />
+    <Copyright />
+  </div>
 </template>
 
 <script>
@@ -23,7 +25,7 @@ export default {
   box-sizing: border-box;
 }
 
-body {
+.container {
   background-color: $dark-blue-1;
   display: flex;
   justify-content: center;
