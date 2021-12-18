@@ -39,6 +39,7 @@
   box-shadow: 0px 28px 5px 15px hsla(217, 55%, 10%, 1);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1.625rem;
   padding: 1.5rem;
   width: 87%;

@@ -22,6 +22,8 @@
 .footer {
   position: absolute;
   bottom: 1%;
+  text-align: center;
+  width: 87%;
   &__paragraph {
     color: $white;
     font-family: $outfit;
