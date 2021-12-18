@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import './styles/normalize.scss';
+
 * {
   margin: 0;
   padding: 0;
