@@ -20,8 +20,7 @@
 
 <style lang="scss">
 .footer {
-  position: absolute;
-  bottom: 1%;
+  font-size: 14px;
   text-align: center;
   width: 87%;
   &__paragraph {
