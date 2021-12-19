@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Card from './components/Card.vue'
-import Copyright from './components/Copyright.vue'
+import Card from './components/Card.vue';
+import Copyright from './components/Copyright.vue';
 
 export default {
   name: 'App',
@@ -15,7 +15,7 @@ export default {
     Card,
     Copyright,
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -30,9 +30,10 @@ export default {
 .container {
   background-color: $dark-blue-1;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 </style>
