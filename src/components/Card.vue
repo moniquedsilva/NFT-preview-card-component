@@ -4,11 +4,18 @@
     <p class="card__paragraph">
       Our Equilibrium collection promotes balance and calm.
     </p>
-    <img
-      src="assets/images/image-equilibrium.jpg"
-      alt="Equilibrium"
-      class="card__image"
-    />
+    <div
+      class="card__imgArea"
+      @mouseover="active = true"
+      @mouseleave="active = false"
+    >
+      <img
+        src="assets/images/image-equilibrium.jpg"
+        alt="Equilibrium"
+        class="card__image"
+      />
+      <div v-show="active" role="image" class="card__view"></div>
+    </div>
     <div class="card__timestamp timestamp">
       <div class="timestamp__info">
         <img src="assets/icons/icon-ethereum.svg" alt="Ethereum icon" />
@@ -32,6 +39,18 @@
   </article>
 </template>
 
+<script>
+export default {
+  name: 'Card',
+  el: '.card__imgArea',
+  data() {
+    return {
+      active: false,
+    };
+  },
+};
+</script>
+
 <style lang="scss">
 .card {
   background-color: $dark-blue-2;
@@ -40,21 +59,50 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.625rem;
+  gap: 1.4rem;
   padding: 1.5rem;
   width: 87%;
-  height: 37.25rem;
   &__title {
     color: $white;
+    cursor: pointer;
     font: 600 1.3125rem $outfit;
+    width: max-content;
+    margin: 0;
+  }
+  &__title:hover {
+    color: $cyan;
   }
   &__paragraph {
     color: $blue;
     font: $outfit-size $outfit;
   }
-  &__image {
-    order: -1;
+  &__imgArea {
     border-radius: 15px;
+    width: 100%;
+    order: -1;
+    cursor: pointer;
+    position: relative;
+  }
+  &__image {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    order: -1;
+    cursor: pointer;
+  }
+  &__view {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    inset: 0;
+    background: url('../../public/assets/icons/icon-view.svg') center no-repeat;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  &__view:hover {
+    opacity: 1;
   }
   &__timestamp {
     display: flex;
@@ -82,6 +130,9 @@
     color: $white;
     cursor: pointer;
   }
+  &__name:hover {
+    color: $cyan;
+  }
 }
 
 .timestamp {
@@ -104,6 +155,7 @@
 @media (min-width: $desktop) {
   .card {
     width: 21.875rem;
+    gap: 1.625rem;
   }
 }
 </style>
