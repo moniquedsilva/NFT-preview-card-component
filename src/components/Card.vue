@@ -8,9 +8,7 @@
       <img
         src="assets/images/image-equilibrium.jpg"
         alt="Equilibrium"
-        width="300"
-        height="300"
-        style="border-radius: 0.5rem"
+        class="card__equilibrium"
       />
     </picture>
     <div class="card__timestamp timestamp">
@@ -61,8 +59,11 @@
     color: $blue;
     font: $outfit-size $outfit;
   }
+  &__equilibrium {
+    border-radius: 0.5rem;
+    width: 100%;
+  }
   &__image {
-    border-radius: 15px;
     cursor: pointer;
     display: block;
     order: -1;
