@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![screenshot](./public/assets/final-version.png)
+![screenshot](./public/assets/images/screenshot-final-version.png)
 
 ### Links
 
