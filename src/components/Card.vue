@@ -4,18 +4,15 @@
     <p class="card__paragraph">
       Our Equilibrium collection promotes balance and calm.
     </p>
-    <div
-      class="card__imgArea"
-      @mouseover="active = true"
-      @mouseleave="active = false"
-    >
+    <picture class="card__image">
       <img
         src="assets/images/image-equilibrium.jpg"
         alt="Equilibrium"
-        class="card__image"
+        width="300"
+        height="300"
+        style="border-radius: 0.5rem"
       />
-      <div v-show="active" role="image" class="card__view"></div>
-    </div>
+    </picture>
     <div class="card__timestamp timestamp">
       <div class="timestamp__info">
         <img src="assets/icons/icon-ethereum.svg" alt="Ethereum icon" />
@@ -39,22 +36,10 @@
   </article>
 </template>
 
-<script>
-export default {
-  name: 'Card',
-  el: '.card__imgArea',
-  data() {
-    return {
-      active: false,
-    };
-  },
-};
-</script>
-
 <style lang="scss">
 .card {
   background-color: $dark-blue-2;
-  border-radius: 15px;
+  border-radius: 1rem;
   box-shadow: 0px 28px 5px 15px hsla(217, 55%, 10%, 1);
   display: flex;
   flex-direction: column;
@@ -76,38 +61,40 @@ export default {
     color: $blue;
     font: $outfit-size $outfit;
   }
-  &__imgArea {
-    border-radius: 15px;
-    width: 100%;
-    order: -1;
-    cursor: pointer;
-    position: relative;
-  }
   &__image {
     border-radius: 15px;
-    width: 100%;
-    height: 100%;
-    order: -1;
     cursor: pointer;
-  }
-  &__view {
+    display: block;
+    order: -1;
+    position: relative;
     width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    position: absolute;
-    inset: 0;
-    background: url('../../public/assets/icons/icon-view.svg') center no-repeat;
-    background-color: hsla(178, 100%, 50%, 0.5);
-    opacity: 0;
-    transition: opacity 0.5s;
   }
-  &__view:hover {
+  &__image::before {
+    content: '';
+    background: url('../../public/assets/icons/icon-view.svg') center no-repeat
+      #fff;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    border-radius: 0.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s;
+  }
+  &__image:hover::before,
+  &__image:active::before {
     opacity: 1;
+    visibility: visible;
   }
   &__timestamp {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
   }
   &__profile {
     border-top: 1px solid $dark-blue-3;
