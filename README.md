@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/nft-preview-card-component-C0FVe1Dd8)
 - [Live Site](https://mss-nft-preview-card.netlify.app/)
 
 ## My process
